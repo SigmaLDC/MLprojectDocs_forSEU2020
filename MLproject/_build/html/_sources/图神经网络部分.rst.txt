@@ -16,8 +16,25 @@
    K.Xu, W.Hu, J.Leskovec, and S.Jegelka. How powerful are graph neural networks? In ICLR,2019
 
 
-图神经网络结构
+图神经网络结构和超参数
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+图神经网络的成员函数
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+::
+
+   def __init__()
+
+::
+
+   def aggregate()
+
+::
+
+   def update()
+
 
 .. toctree::
    :maxdepth: 2

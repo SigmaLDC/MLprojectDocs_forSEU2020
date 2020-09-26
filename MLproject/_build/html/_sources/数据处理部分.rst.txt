@@ -10,19 +10,26 @@
 我们将数据视为一个自定义数据类型Data，包含以下数据成员 和 成员函数：
 ::
 
-   __init__(self):
+   def __init__(self):
 
 
 ::
 
-   show_data_summary(self):
+   def show_data_summary(self):
 
+说明
  | 输出数据的信息，包含
+
 
 向量嵌入部分
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  | 我们使用的是 Lattice 公布的char和word预训练词向量。
  | 预训练的向量可以从以下地址获得https://github.com/jiesutd/LatticeLSTM
+
+::
+
+   def get_c
+
 
 .. toctree::
    :maxdepth: 2

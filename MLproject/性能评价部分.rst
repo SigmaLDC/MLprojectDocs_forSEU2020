@@ -9,7 +9,7 @@
 ^^^^^^^^^^^^^^^^^^
 ::
 
-   get_statistics(labels,pred_result)
+   def get_statistics(labels,pred_result)
 
 说明：
  | 该函数的输入是数据的标签 和 模型预测的结果
@@ -22,28 +22,28 @@
 ^^^^^^^^^^^^^^^^^^^^^^
 ::
 
-   get_accuracy()
+   def get_accuracy()
 
 说明：
  | 根据get_statistics()返回的统计结果，计算模型的accuracy
 
 ::
 
-   get_precision()
+   def get_precision()
 
 说明：
  | 根据get_statistics()返回的统计结果，计算模型的precision
 
 ::
 
-   get_recall()
+   def get_recall()
 
 说明：
  | 根据get_statistics()返回的统计结果，计算模型的recall
 
 ::
 
-   get_F1()
+   def get_F1()
 
 说明：
  | 根据get_statistics()返回的统计结果，计算模型的F1 score

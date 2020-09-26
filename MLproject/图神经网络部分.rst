@@ -25,15 +25,15 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ::
 
-   __init__()
+   def __init__()
 
 ::
 
-   aggregate()
+   def aggregate()
 
 ::
 
-   update()
+   def update()
 
 
 .. toctree::

@@ -23,17 +23,29 @@
 
 图神经网络的成员函数
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-::
-
-   def __init__()
-
-::
-
-   def aggregate()
+ | 我们的模型来自论文a lexicon based graph neural network for Chinese named entity recognition
+ | 模型名称简称为LGN
 
 ::
 
-   def update()
+   class LGN():
+
+::
+
+   def __init__():
+
+::
+
+   def construct_graph():
+
+
+::
+
+   def aggregate():
+
+::
+
+   def update():
 
 
 .. toctree::

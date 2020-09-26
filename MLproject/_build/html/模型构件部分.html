@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>模型构件部分说明 &mdash; MLproject 1.0 文档</title>
+  <title>模型构件部分 &mdash; MLproject 1.0 文档</title>
   
 
   
@@ -88,13 +88,14 @@
 <li class="toctree-l1"><a class="reference internal" href="分工介绍.html">分工介绍</a></li>
 <li class="toctree-l1"><a class="reference internal" href="数据处理部分.html">数据处理部分</a></li>
 <li class="toctree-l1"><a class="reference internal" href="性能评价部分.html">性能评价部分</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">模型构件部分说明</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">模型构件部分</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#crf">CRF(条件随机场):</a><ul class="simple">
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="图神经网络部分.html">图神经网络部分</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Main.html">Main函数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="实验结果和解释.html">实验结果和解释</a></li>
 <li class="toctree-l1"><a class="reference internal" href="创新部分.html">创新部分</a></li>
 <li class="toctree-l1"><a class="reference internal" href="帮助.html">帮助</a></li>
@@ -144,7 +145,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>模型构件部分说明</li>
+      <li>模型构件部分</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -164,13 +165,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="id1">
-<h1>模型构件部分说明<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h1>模型构件部分<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
 <div class="section" id="crf">
 <h2>CRF(条件随机场):<a class="headerlink" href="#crf" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div><div class="line-block">
 <div class="line">我们使用条件随机场来做最终的序列标注任务</div>
-<div class="line">并使用viterbi算法(一种动态规划算法对其进行优化)</div>
+<div class="line">并使用viterbi算法(一种动态规划算法)对其进行优化</div>
 </div>
 </div></blockquote>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CRF</span><span class="p">():</span>

@@ -3,20 +3,14 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-模型构件部分
+Main函数
 =====================================
-CRF(条件随机场):
-^^^^^^^^^^^^^^^^^^^^^^
- | 我们使用条件随机场来做最终的序列标注任务
- | 并使用viterbi算法(一种动态规划算法)对其进行优化
-
-::
-
-   class CRF():
+我们不希望main函数过于复杂，之后可能会把main拆分成train，test等多个文件
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+
 
 
 

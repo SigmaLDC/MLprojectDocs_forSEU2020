@@ -3,12 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-模型构件部分说明
+模型构件部分
 =====================================
 CRF(条件随机场):
 ^^^^^^^^^^^^^^^^^^^^^^
  | 我们使用条件随机场来做最终的序列标注任务
- | 并使用viterbi算法(一种动态规划算法对其进行优化)
+ | 并使用viterbi算法(一种动态规划算法)对其进行优化
 
 ::
 

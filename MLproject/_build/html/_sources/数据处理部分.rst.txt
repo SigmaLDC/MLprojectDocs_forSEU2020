@@ -7,7 +7,22 @@
 =====================================
 数据部分
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-我们将数据视为一个自定义数据类型Data，包含以下数据成员 和 成员函数：
+::
+
+   class Data():
+
+说明：   
+ | 我们将数据视为一个自定义数据类型Data，包含以下数据成员：
+ | 输入数据中包含的字符Data.chars，用于构建图中的节点
+ | 输入数据中包含的词语Data.words，用于构建图中的边
+ | 每个字符的向量表示Data.char_embeddings
+ | 每个词语的向量表示Data.word_embeddings
+ | 每个字符对应的标签Data.labels(采用BMES或BIO标记法)
+
+
+ | 类Data包含以下成员函数：
+
+
 ::
 
    def __init__(self):
@@ -15,21 +30,37 @@
 
 ::
 
-   def show_data_summary(self):
+   def show_data_info(self):
 
 说明
- | 输出数据的信息，包含
+ | 输出数据的信息
 
+::
+
+   def get_labels(self):
+
+说明
+ | 获取每个字符对应的标签
 
 向量嵌入部分
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  | 我们使用的是 Lattice 公布的char和word预训练词向量。
  | 预训练的向量可以从以下地址获得https://github.com/jiesutd/LatticeLSTM
+ | 由于各种原因(主要是经济原因)，我们将不会训练自己的词向量。因此词向量的维数等超参数都是不可修改的。
+ 
+::
+
+   def get_char_embedding():
+
+说明
+ | 为图中的节点构建初始化向量
 
 ::
 
-   def get_c
+   def get_word_embedding():
 
+说明
+ | 为图中的边构建初始化向量
 
 .. toctree::
    :maxdepth: 2

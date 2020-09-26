@@ -1,0 +1,51 @@
+.. MLproject documentation master file, created by
+   sphinx-quickstart on Fri Sep 25 23:11:00 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+图神经网络部分
+=====================================
+开发工具和相关知识背景介绍
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ | 我们采用DGL(deep graph library)来构建并可视化我们的图神经网络
+ | 如果您还不熟悉DGL，这个链接中有更详细的介绍：https://docs.dgl.ai/index.html
+ | 如果您还不熟悉图神经网络，我们推荐您阅读以下文章：
+
+::
+
+   K.Xu, W.Hu, J.Leskovec, and S.Jegelka. How powerful are graph neural networks? In ICLR,2019
+
+
+图神经网络结构和超参数
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+图神经网络的成员函数
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+::
+
+   __init__()
+
+::
+
+   aggregate()
+
+::
+
+   update()
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+
+
+
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

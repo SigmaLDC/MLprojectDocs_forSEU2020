@@ -1,0 +1,63 @@
+.. MLproject documentation master file, created by
+   sphinx-quickstart on Fri Sep 25 23:11:00 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+性能评价部分
+=====================================
+性能数据统计
+^^^^^^^^^^^^^^^^^^
+::
+
+   get_statistics(labels,pred_result)
+
+说明：
+ | 该函数的输入是数据的标签 和 模型预测的结果
+ | 输出的结果是：
+ | 模型预测正确的样本个数 和 预测错误的样本个数
+
+
+
+测评指标计算
+^^^^^^^^^^^^^^^^^^^^^^
+::
+
+   get_accuracy()
+
+说明：
+ | 根据get_statistics()返回的统计结果，计算模型的accuracy
+
+::
+
+   get_precision()
+
+说明：
+ | 根据get_statistics()返回的统计结果，计算模型的precision
+
+::
+
+   get_recall()
+
+说明：
+ | 根据get_statistics()返回的统计结果，计算模型的recall
+
+::
+
+   get_F1()
+
+说明：
+ | 根据get_statistics()返回的统计结果，计算模型的F1 score
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+
+
+
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

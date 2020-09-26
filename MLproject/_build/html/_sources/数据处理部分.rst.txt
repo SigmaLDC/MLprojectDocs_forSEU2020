@@ -1,0 +1,39 @@
+.. MLproject documentation master file, created by
+   sphinx-quickstart on Fri Sep 25 23:11:00 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+数据处理部分
+=====================================
+数据部分
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+我们将数据视为一个自定义数据类型Data，包含以下数据成员 和 成员函数：
+::
+
+   __init__(self):
+
+
+::
+
+   show_data_summary(self):
+
+ | 输出数据的信息，包含
+
+向量嵌入部分
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ | 我们使用的是 Lattice 公布的char和word预训练词向量。
+ | 预训练的向量可以从以下地址获得https://github.com/jiesutd/LatticeLSTM
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+
+
+
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

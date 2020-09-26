@@ -23,8 +23,8 @@ author = 'Yingtai Li  Yuanhao Yue  Yanglong He  Xiyuan Du'
 
 # The full version, including alpha/beta/rc tags
 release = '1.0'
-master_doc="index"
 
+master_doc = 'index'
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -61,3 +61,10 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+from recommonmark.parser import CommonMarkParser
+source_parsers = {
+    '.md': CommonMarkParser,
+}
+source_suffix = ['.rst', '.md']
+

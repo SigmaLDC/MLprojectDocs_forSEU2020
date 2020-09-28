@@ -37,6 +37,21 @@
 
 ::
 
+   def get_words(self):
+
+说明
+ | 获取每个字符对应的标签
+
+::
+
+   def get_char(self):
+
+说明
+ | 获取每个字符对应的标签
+
+
+::
+
    def get_labels(self):
 
 说明
@@ -50,14 +65,14 @@
  
 ::
 
-   def get_char_embedding():
+   def get_char_embedding(self):
 
 说明
  | 为图中的节点构建初始化向量
 
 ::
 
-   def get_word_embedding():
+   def get_word_embedding(self):
 
 说明
  | 为图中的边构建初始化向量

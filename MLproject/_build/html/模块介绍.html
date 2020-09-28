@@ -87,7 +87,12 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="分工介绍.html">分工介绍</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">模块介绍</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">数据处理部分</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="#id2">数据处理部分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">图神经网络部分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">条件随机场部分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">性能评价部分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main">Main</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">创新部分</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -96,7 +101,7 @@
 <li class="toctree-l1"><a class="reference internal" href="性能评价部分.html">性能评价部分</a></li>
 <li class="toctree-l1"><a class="reference internal" href="图神经网络部分.html">图神经网络部分</a></li>
 <li class="toctree-l1"><a class="reference internal" href="条件随机场.html">条件随机场</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Main.html">Main函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Main.html">Main</a></li>
 <li class="toctree-l1"><a class="reference internal" href="实验结果和解释.html">实验结果和解释</a></li>
 <li class="toctree-l1"><a class="reference internal" href="创新部分.html">创新部分</a></li>
 <li class="toctree-l1"><a class="reference internal" href="帮助.html">帮助</a></li>
@@ -189,9 +194,34 @@
 </div>
 <div class="line-block">
 <div class="line">在初始的开发中，我们将所有的向量表示都采用torch.nn.Embedding()进行初始化，暂不进行预训练向量的加载。参考https://zhuanlan.zhihu.com/p/256418655
-中的结论，我们将我们的词向量长度定为10logN(取最接近的2的幂次)。</div>
+中的结论，我们将我们的字(label、词)向量长度定为10logN(取最接近的2的幂次)。</div>
 </div>
 </div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>图神经网络部分<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">我们将根据构建的Data对象构建这样的一个图：</div>
+</div>
+<div class="line-block">
+<div class="line">我们的word将根据char的index，表现为一个pair的形式[a,b]，a是word起始的char的index，b是word终止的char的index。</div>
+<div class="line">我们将所有的a和所有的b分成2个tensor进行存储，并用这2个tensor来构建Graph。我们的Graph是DGL.Graph()的对象。</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h2>条件随机场部分<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="id5">
+<h2>性能评价部分<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+</div>
+<div class="section" id="main">
+<h2>Main<a class="headerlink" href="#main" title="永久链接至标题">¶</a></h2>
+<p>这里的main指的并不是指main.py。我们将把所做的实验都封装成函数定义在这一部分。</p>
+</div>
+<div class="section" id="id6">
+<h2>创新部分<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <div class="toctree-wrapper compound">
 </div>
 <hr class="docutils" />

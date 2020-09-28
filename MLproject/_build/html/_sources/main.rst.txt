@@ -3,9 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Main函数
+Main
 =====================================
-我们不希望main函数过于复杂，之后可能会把main拆分成train，test等多个文件
+
 
 .. toctree::
    :maxdepth: 2

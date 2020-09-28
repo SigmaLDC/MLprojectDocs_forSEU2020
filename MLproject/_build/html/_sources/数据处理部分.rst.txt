@@ -15,8 +15,6 @@
  | 我们将数据视为一个自定义数据类型Data，包含以下数据成员：
  | 输入数据中包含的字符Data.chars，用于构建图中的节点
  | 输入数据中包含的词语Data.words，用于构建图中的边
- | 每个字符的向量表示Data.char_embeddings
- | 每个词语的向量表示Data.word_embeddings
  | 每个字符对应的标签Data.labels(采用BMES或BIO标记法)
 
 
@@ -37,45 +35,37 @@
 
 ::
 
-   def get_words(self):
+   def build_chars(self,input_file):
 
 说明
- | 获取每个字符对应的标签
+ | 从输入的文件中构建字符。self.chars是一个字典，其中key是字符，value是其对应的index。
 
 ::
 
-   def get_char(self):
+   def build_words(self,input_file,word_dict):
 
 说明
- | 获取每个字符对应的标签
+ | 根据word_dict匹配输入的文件中所有可能的词语，self.words是一个字典，其中key是词语，以pair[a,b]的形式表示。
+   a,b分别代表该词语起始和终止的char的index。value是其对应的index。
 
 
 ::
 
-   def get_labels(self):
+   def build_labels(self,input_file):
 
 说明
- | 获取每个字符对应的标签
+ | 获取每个字符对应的标签.self.labels是一个字典，其中key是label,value是其对应的index。
+
 
 向量嵌入部分
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- | 我们使用的是 Lattice 公布的char和word预训练词向量。
+ | 如果采用预训练的词向量，我们将使用的是 Lattice 公布的char和word预训练词向量。
  | 预训练的向量可以从以下地址获得https://github.com/jiesutd/LatticeLSTM
- | 由于各种原因(主要是经济原因)，我们将不会训练自己的词向量。因此词向量的维数等超参数都是不可修改的。
+ | 由于各种原因(主要是经济原因)，我们将不会训练自己的词向量。因此如果使用预训练的词向量，词向量的维数等超参数都是不可修改的。
  
-::
 
-   def get_char_embedding(self):
 
-说明
- | 为图中的节点构建初始化向量
 
-::
-
-   def get_word_embedding(self):
-
-说明
- | 为图中的边构建初始化向量
 
 .. toctree::
    :maxdepth: 2

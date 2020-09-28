@@ -98,7 +98,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="条件随机场.html">条件随机场</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Main.html">Main函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Main.html">Main</a></li>
 <li class="toctree-l1"><a class="reference internal" href="实验结果和解释.html">实验结果和解释</a></li>
 <li class="toctree-l1"><a class="reference internal" href="创新部分.html">创新部分</a></li>
 <li class="toctree-l1"><a class="reference internal" href="帮助.html">帮助</a></li>
@@ -193,10 +193,12 @@
 <div class="line">模型名称简称为LGN</div>
 </div>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LGN</span><span class="p">():</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  class LGN():
+
+| LGN将继承DGL.Graph类。
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">__init__</span><span class="p">():</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">construct_graph</span><span class="p">():</span>

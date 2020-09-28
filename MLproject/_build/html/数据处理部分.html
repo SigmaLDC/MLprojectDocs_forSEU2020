@@ -97,7 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="性能评价部分.html">性能评价部分</a></li>
 <li class="toctree-l1"><a class="reference internal" href="图神经网络部分.html">图神经网络部分</a></li>
 <li class="toctree-l1"><a class="reference internal" href="条件随机场.html">条件随机场</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Main.html">Main函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Main.html">Main</a></li>
 <li class="toctree-l1"><a class="reference internal" href="实验结果和解释.html">实验结果和解释</a></li>
 <li class="toctree-l1"><a class="reference internal" href="创新部分.html">创新部分</a></li>
 <li class="toctree-l1"><a class="reference internal" href="帮助.html">帮助</a></li>
@@ -178,8 +178,6 @@
 <div class="line">我们将数据视为一个自定义数据类型Data，包含以下数据成员：</div>
 <div class="line">输入数据中包含的字符Data.chars，用于构建图中的节点</div>
 <div class="line">输入数据中包含的词语Data.words，用于构建图中的边</div>
-<div class="line">每个字符的向量表示Data.char_embeddings</div>
-<div class="line">每个词语的向量表示Data.word_embeddings</div>
 <div class="line">每个字符对应的标签Data.labels(采用BMES或BIO标记法)</div>
 </div>
 <div class="line-block">
@@ -199,30 +197,31 @@
 </div>
 </dd>
 </dl>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_words</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build_chars</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">input_file</span><span class="p">):</span>
 </pre></div>
 </div>
 <dl>
 <dt>说明</dt><dd><div class="line-block">
-<div class="line">获取每个字符对应的标签</div>
+<div class="line">从输入的文件中构建字符。self.chars是一个字典，其中key是字符，value是其对应的index。</div>
 </div>
 </dd>
 </dl>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_char</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build_words</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">input_file</span><span class="p">,</span><span class="n">word_dict</span><span class="p">):</span>
 </pre></div>
 </div>
 <dl>
 <dt>说明</dt><dd><div class="line-block">
-<div class="line">获取每个字符对应的标签</div>
+<div class="line">根据word_dict匹配输入的文件中所有可能的词语，self.words是一个字典，其中key是词语，以pair[a,b]的形式表示。
+a,b分别代表该词语起始和终止的char的index。value是其对应的index。</div>
 </div>
 </dd>
 </dl>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_labels</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">build_labels</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">input_file</span><span class="p">):</span>
 </pre></div>
 </div>
 <dl>
 <dt>说明</dt><dd><div class="line-block">
-<div class="line">获取每个字符对应的标签</div>
+<div class="line">获取每个字符对应的标签.self.labels是一个字典，其中key是label,value是其对应的index。</div>
 </div>
 </dd>
 </dl>
@@ -231,29 +230,11 @@
 <h2>向量嵌入部分<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <blockquote>
 <div><div class="line-block">
-<div class="line">我们使用的是 Lattice 公布的char和word预训练词向量。</div>
+<div class="line">如果采用预训练的词向量，我们将使用的是 Lattice 公布的char和word预训练词向量。</div>
 <div class="line">预训练的向量可以从以下地址获得https://github.com/jiesutd/LatticeLSTM</div>
-<div class="line">由于各种原因(主要是经济原因)，我们将不会训练自己的词向量。因此词向量的维数等超参数都是不可修改的。</div>
+<div class="line">由于各种原因(主要是经济原因)，我们将不会训练自己的词向量。因此如果使用预训练的词向量，词向量的维数等超参数都是不可修改的。</div>
 </div>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_char_embedding</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</pre></div>
-</div>
-<dl>
-<dt>说明</dt><dd><div class="line-block">
-<div class="line">为图中的节点构建初始化向量</div>
-</div>
-</dd>
-</dl>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_word_embedding</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</pre></div>
-</div>
-<dl>
-<dt>说明</dt><dd><div class="line-block">
-<div class="line">为图中的边构建初始化向量</div>
-</div>
-</dd>
-</dl>
 <div class="toctree-wrapper compound">
 </div>
 <hr class="docutils" />

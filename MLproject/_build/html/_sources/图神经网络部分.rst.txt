@@ -30,9 +30,11 @@
 
    class LGN():
 
+ | LGN将继承DGL.Graph类。
+
 ::
 
-   def __init__():
+   def __init__(self):
 
 ::
 

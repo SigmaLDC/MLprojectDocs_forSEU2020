@@ -86,13 +86,16 @@
               <p class="caption"><span class="caption-text">目录:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="分工介绍.html">分工介绍</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">模块介绍</a><ul class="simple">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">模块介绍</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">数据处理部分</a><ul class="simple">
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="数据处理部分.html">数据处理部分</a></li>
 <li class="toctree-l1"><a class="reference internal" href="性能评价部分.html">性能评价部分</a></li>
-<li class="toctree-l1"><a class="reference internal" href="模型构件部分.html">模型构件部分</a></li>
 <li class="toctree-l1"><a class="reference internal" href="图神经网络部分.html">图神经网络部分</a></li>
+<li class="toctree-l1"><a class="reference internal" href="条件随机场.html">条件随机场</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Main.html">Main函数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="实验结果和解释.html">实验结果和解释</a></li>
 <li class="toctree-l1"><a class="reference internal" href="创新部分.html">创新部分</a></li>
@@ -164,6 +167,31 @@
             
   <div class="section" id="id1">
 <h1>模块介绍<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<blockquote>
+<div><div class="line-block">
+<div class="line">我们将在这一部分简单的介绍一下我们对于模型的整体设计。并为我们的代码给出一些基础的操作指导。</div>
+</div>
+</div></blockquote>
+<div class="section" id="id2">
+<h2>数据处理部分<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<div><div class="line-block">
+<div class="line">我们的输入数据的格式是采用bmes标记法标注过的文本。在进行读取数据之前，我们将首先根据中文词典(lexicon)建立word_dict。
+为了方便对词语进行快速的匹配，我们将考虑对word_dict采用一些特殊的数据结构存储。
+对于每个输入的数据(txt文件)，我们将其转化为一个数据类Data的一个对象。Data的属性中将包含输入信息中所有的字符，并记录这些字符对应的index。
+同时我们将记录每个字符对应的label，以及label对应的index。</div>
+</div>
+<div class="line-block">
+<div class="line">同时，我们还将在输入每个字符的时候，去考察这个字符和word_dict的中的word能否匹配。一旦存在匹配的word，我们将这些word也加入到Data中。</div>
+</div>
+<div class="line-block">
+<div class="line">在以上说明的char，label和word中，index=0意味着unknown或是NULL。</div>
+</div>
+<div class="line-block">
+<div class="line">在初始的开发中，我们将所有的向量表示都采用torch.nn.Embedding()进行初始化，暂不进行预训练向量的加载。参考https://zhuanlan.zhihu.com/p/256418655
+中的结论，我们将我们的词向量长度定为10logN(取最接近的2的幂次)。</div>
+</div>
+</div></blockquote>
 <div class="toctree-wrapper compound">
 </div>
 <hr class="docutils" />
@@ -172,6 +200,7 @@
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">模块索引</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">搜索页面</span></a></p></li>
 </ul>
+</div>
 </div>
 
 

@@ -1,0 +1,28 @@
+.. MLproject documentation master file, created by
+   sphinx-quickstart on Fri Sep 25 23:11:00 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+条件随机场
+=====================================
+CRF(条件随机场):
+^^^^^^^^^^^^^^^^^^^^^^
+ | 我们使用条件随机场来做最终的序列标注任务
+ | 并使用viterbi算法(一种动态规划算法)对其进行优化
+
+::
+
+   class CRF():
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+
+
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

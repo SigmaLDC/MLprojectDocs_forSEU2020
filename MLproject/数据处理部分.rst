@@ -5,6 +5,37 @@
 
 数据处理部分
 =====================================
+词典部分
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ | 我们将构建一个独立于输入数据的word_dict。这方面目前考虑使用一些中文的权威词典。
+   为了能够以较快的速度完成词语的匹配，我们考虑采用一些特殊的数据结构来存储这个词典。
+
+::
+   
+   class Lexicon():
+      def __init__(self):
+
+      def build_lexicon(self,input_dictionary):
+
+      def load_dictionary(self,saved_dictionary):
+
+      def save_dictionary(self):
+
+      def search(self,query):
+         """
+         query是当前的char，我们将返回所有以这个char开头的word,返回的形式是一个list。
+         """
+
+匹配函数
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+   def match(current_char,word_dict)
+   """
+   match函数将调用Lexicon.search(),保留所有在输入序列中确实存在的词语，并将这些词语用来构建Data.words
+   """
+
 数据部分
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ::

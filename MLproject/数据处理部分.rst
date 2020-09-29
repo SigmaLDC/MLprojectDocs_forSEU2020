@@ -66,27 +66,48 @@
 
 ::
 
-   def build_chars(self,input_file):
+   def build_chars_dict(self,input_file):
 
 说明
- | 从输入的文件中构建字符。self.chars是一个字典，其中key是字符，value是其对应的index。
+ | 从输入的文件中构建字符。self.chars_dict是一个字典，其中key是字符，value是其对应的index。
 
 ::
 
-   def build_words(self,input_file,word_dict):
+   def build_words_dict(self,input_file,word_dict):
 
 说明
- | 根据word_dict匹配输入的文件中所有可能的词语，self.words是一个字典，其中key是词语，以pair[a,b]的形式表示。
+ | 根据word_dict匹配输入的文件中所有可能的词语，self.words_dict是一个字典，其中key是词语，以pair[a,b]的形式表示。
    a,b分别代表该词语起始和终止的char的index。value是其对应的index。
 
 
 ::
 
-   def build_labels(self,input_file):
+   def build_labels_dict(self,input_file):
 
 说明
- | 获取每个字符对应的标签.self.labels是一个字典，其中key是label,value是其对应的index。
+ | 获取每个字符对应的标签。self.labels_dict是一个字典，其中key是label,value是其对应的index。
 
+::
+
+   def build_chars_list(self,input_file):
+
+说明
+ | 从输入的文件中构建字符。self.chars_list是一个列表，其中的每个元素是输入序列中顺序出现的char的index。
+
+::
+
+   def build_words_list(self,input_file,word_dict):
+
+说明
+ | 根据word_dict匹配输入的文件中所有可能的词语，self.words_list是一个列表，其中的每个元素是输入序列中顺序出现的word的index。
+
+
+::
+
+   def build_labels_list(self,input_file):
+
+说明
+ | 获取每个字符对应的标签。self.labels_list是一个列表，其中的每个元素是输入序列中顺序出现的label的index。
 
 向量嵌入部分
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
